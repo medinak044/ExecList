@@ -5,9 +5,10 @@
 
     <ScrollView>
         <VerticalStackLayout
+            x:Name="ButtonContainer1"
             Padding="30,0"
             Spacing="25">
-            <Image
+            <!--<Image
                 Source="dotnet_bot.png"
                 HeightRequest="185"
                 Aspect="AspectFit"
@@ -16,13 +17,19 @@
             <Label
                 Text="Hello, World!"
                 Style="{StaticResource Headline}"
-                SemanticProperties.HeadingLevel="Level1" />
+                SemanticProperties.HeadingLevel="Level1" />-->
 
             <Label
-                Text="Welcome to &#10;.NET Multi-platform App UI"
+                Text="ExecList &#10; Execute from this list"
                 Style="{StaticResource SubHeadline}"
                 SemanticProperties.HeadingLevel="Level2"
                 SemanticProperties.Description="Welcome to dot net Multi platform App U I" />
+
+            <Button
+                x:Name="RefreshBtn"
+                Text="Refresh"
+                Clicked="Refresh"
+            />
 
             <Button
                 x:Name="CounterBtn"
@@ -30,7 +37,9 @@
                 SemanticProperties.Hint="Counts the number of times you click"
                 Clicked="OnCounterClicked"
                 HorizontalOptions="Fill" />
+
         </VerticalStackLayout>
+        
     </ScrollView>
 
 </ContentPage>
