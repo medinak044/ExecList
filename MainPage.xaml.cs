@@ -47,13 +47,14 @@ namespace ExecList
                 return;
             }
 
-            foreach (FileItem fileItem in profile.FileItems)
+            foreach (FileItem fileItem in profile.FileItems!)
             {
                 var button = new Button
                 {
-                    Text = fileItem.Name ?? "(Untitled)",
+                    Text = !string.IsNullOrEmpty(fileItem.Name) ? 
+                    fileItem.Name : Path.GetFileName(fileItem.FilePath),
                     FontSize = 18,
-                    //HorizontalOptions = LayoutOptions.Fill
+                    HorizontalOptions = LayoutOptions.Fill
                 };
 
                 button.Clicked += (sender, e) => Button_Clicked(sender!, e, fileItem);
